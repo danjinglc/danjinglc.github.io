@@ -68,17 +68,6 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[Python的逻辑判断和循环]]></title>
-    <url>%2F2019%2F09%2F01%2FPython%E7%9A%84%E9%80%BB%E8%BE%91%E5%88%A4%E6%96%AD%E5%92%8C%E5%BE%AA%E7%8E%AF%2F</url>
-    <content type="text"><![CDATA[逻辑判断if elif else 条件判断if语句的完整形式是： 123456if &lt;条件判断1&gt;: &lt;执行1&gt;elif &lt;条件判断2&gt;: &lt;执行2&gt;else: &lt;执行3&gt; if语句可以进行嵌套来实现多重语句的判断 循环结构 while循环 for循环break和continue 在循环中，break语句可以提前退出循环体continue语句可以跳过当前循环，直接开始下一次循环]]></content>
-      <categories>
-        <category>数据分析</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Python之NumPy详解(一)]]></title>
     <url>%2F2019%2F09%2F01%2FPython%E4%B9%8BNumPy%E8%AF%A6%E8%A7%A3(%E4%B8%80)%2F</url>
     <content type="text"><![CDATA[NumPy简介NumPy(Numerical Python) 是 Python 语言的一个扩展程序库，支持大量的维度数组与矩阵运算，此外也针对数组运算提供大量的数学函数库。NumPy 的前身 Numeric 最早是由 Jim Hugunin 与其它协作者共同开发，2005 年，Travis Oliphant 在 Numeric 中结合了另一个同性质的程序库 Numarray 的特色，并加入了其它扩展而开发了 NumPy。NumPy 为开放源代码并且由许多协作者共同维护开发。NumPy 是一个运行速度非常快的数学库，主要用于数组计算，包含： 一个强大的N维数组对象 ndarray 广播功能函数 整合 C/C++/Fortran 代码的工具 线性代数、傅里叶变换、随机数生成等功能 NumPy应用NumPy 通常与 SciPy（Scientific Python）和 Matplotlib（绘图库）一起使用， 这种组合广泛用于替代 MatLab，是一个强大的科学计算环境，有助于我们通过 Python 学习数据科学或者机器学习。SciPy 是一个开源的 Python 算法库和数学工具包。SciPy 包含的模块有最优化、线性代数、积分、插值、特殊函数、快速傅里叶变换、信号处理和图像处理、常微分方程求解和其他科学与工程中常用的计算。Matplotlib 是 Python 编程语言及其数值数学扩展包 NumPy 的可视化操作界面。它为利用通用的图形用户界面工具包，如 Tkinter, wxPython, Qt 或 GTK+ 向应用程序嵌入式绘图提供了应用程序接口（API）。 相关连接 NumPy 官网 NumPy 源代码 SciPy 官网 SciPy 源代码 Matplotlib 官网 Matplotlib 源代码 NumPy Ndarray 对象NumPy 最重要的一个特点是其 N 维数组对象 ndarray，它是一系列同类型数据的集合，以 0 下标为开始进行集合中元素的索引。ndarray 对象是用于存放同类型元素的多维数组。ndarray 中的每个元素在内存中都有相同存储大小的区域。ndarray 内部由以下内容组成： 一个指向数据（内存或内存映射文件中的一块数据）的指针。 数据类型或 dtype，描述在数组中的固定大小值的格子。 一个表示数组形状（shape）的元组，表示各维度大小的元组。 一个跨度元组（stride），其中的整数指的是为了前进到当前维度下一个元素需要”跨过”的字节数。 ndarray 的内部结构: 跨度可以是负数，这样会使数组在内存中后向移动，切片中 obj[::-1] 或 obj[:,::-1] 就是如此。创建一个 ndarray 只需调用 NumPy 的 array 函数即可：numpy.array(object, dtype = None, copy = True, order = None, subok = False, ndmin = 0)参数说明： 名称 描述 object 数组或嵌套的数列 dtype 数组元素的数据类型，可选 copy 对象是否需要复制，可选 order 创建数组的样式，C为行方向，F为列方向，A为任意方向（默认） subok 默认返回一个与基类类型一致的数组 ndmin 指定生成数组的最小维度 NumPy 数据类型numpy 支持的数据类型比 Python 内置的类型要多很多，基本上可以和 C 语言的数据类型对应上，其中部分类型对应为 Python 内置的类型。下表列举了常用 NumPy 基本类型。 名称 描述 bool_ 布尔型数据类型（True 或者 False） int_ 默认的整数类型（类似于 C 语言中的 long，int32 或 int64） intc 与 C 的 int 类型一样，一般是 int32 或 int 64 intp 用于索引的整数类型（类似于 C 的 ssize_t，一般情况下仍然是 int32 或 int64） int8 字节（-128 to 127） int16 整数（-32768 to 32767） int32 整数（-2147483648 to 2147483647） int64 整数（-9223372036854775808 to 9223372036854775807） uint8 无符号整数（0 to 255） uint16 无符号整数（0 to 65535） uint32 无符号整数（0 to 4294967295） uint64 无符号整数（0 to 18446744073709551615） float_ float64 类型的简写 float16 半精度浮点数，包括：1 个符号位，5 个指数位，10 个尾数位 float32 单精度浮点数，包括：1 个符号位，8 个指数位，23 个尾数位 float64 双精度浮点数，包括：1 个符号位，11 个指数位，52 个尾数位 complex_ complex128 类型的简写，即 128 位复数 complex64 复数，表示双 32 位浮点数（实数部分和虚数部分） complex128 复数，表示双 64 位浮点数（实数部分和虚数部分） numpy 的数值类型实际上是 dtype 对象的实例，并对应唯一的字符，包括 np.bool_，np.int32，np.float32，等等。 数据类型对象 (dtype)数据类型对象是用来描述与数组对应的内存区域如何使用，这依赖如下几个方面： 数据的类型（整数，浮点数或者 Python 对象） 数据的大小（例如， 整数使用多少个字节存储） 数据的字节顺序（小端法或大端法） 在结构化类型的情况下，字段的名称、每个字段的数据类型和每个字段所取的内存块的部分 如果数据类型是子数组，它的形状和数据类型 字节顺序是通过对数据类型预先设定”&lt;”或”&gt;”来决定的。”&lt;”意味着小端法(最小值存储在最小的地址，即低位组放在最前面)。”&gt;”意味着大端法(最重要的字节存储在最小的地址，即高位组放在最前面)。 dtype 对象是使用以下语法构造的：numpy.dtype(object, align, copy) object - 要转换为的数据类型对象 align - 如果为 true，填充字段使其类似 C 的结构体。 copy - 复制 dtype 对象 ，如果为 false，则是对内置数据类型对象的引用]]></content>
@@ -94,6 +83,17 @@
     <title><![CDATA[Python基础知识]]></title>
     <url>%2F2019%2F09%2F01%2FPython%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%2F</url>
     <content type="text"><![CDATA[Python应用场景 数据分析 数据采集 人工智能 编程开发 工具脚本 Python基本变量类型 类型 描述 语法示例 整型(int) 无小数部分的数 1,100 浮点型(float) 有小数部分的数 1.2,100.5 字符串(string) 不可变的字符序列 ‘1’,’我很好’ 布尔型 True、False两种值 空值空值是Python里一个特殊的值，用None表示。None不能理解为0，因为0是有意义的，而None是一个特殊的空值。 常见的数据类型转换 函数 说明 int(x) 将x转换成一个整数 float(x) 将x转换成一个浮点数 str(x) 将对象x转换成字符串 repr(x) 将对象x转换成表达式字符串 eval(str) 用来计算在字符串中的有效Python表达式，并返回一个对象 tuple(s) 将序列s转换为一个元祖 list(s) 将序列s转换为一个列表 命名规则 最重要的一点就是要见名知意可以使用小驼峰式、大驼峰式，或者用下划线”_”来连接所有的单词 Python的格式化输出在Python中，采用的格式化方式和C语言是一致的，用%实现。在字符串内部，%s表示用字符串替换，%d表示用整数替换，有几个%?占位符，后面就跟几个变量或者值，顺序要对应好。如果只有一个%?，括号可以省略。|格式控制|输出|解释||-|-|-||”%d”|24|格式为整数||”%5d”|24|24，宽度为5个字符||”%05d”|00024|宽度为5个字符，其余用0填充||”%f”|1.21997|浮点数||”%.2f”|1.22|小数点两位的浮点数||”%7.2f”|1.22|宽度为七，小数点两位的浮点数||”%s”|Hello|字符串||”%d%%”|24%|整数和百分号，%%输出一个百分号|]]></content>
+      <categories>
+        <category>数据分析</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Python的逻辑判断和循环]]></title>
+    <url>%2F2019%2F09%2F01%2FPython%E7%9A%84%E9%80%BB%E8%BE%91%E5%88%A4%E6%96%AD%E5%92%8C%E5%BE%AA%E7%8E%AF%2F</url>
+    <content type="text"><![CDATA[逻辑判断if elif else 条件判断if语句的完整形式是： 123456if &lt;条件判断1&gt;: &lt;执行1&gt;elif &lt;条件判断2&gt;: &lt;执行2&gt;else: &lt;执行3&gt; if语句可以进行嵌套来实现多重语句的判断 循环结构 while循环 for循环break和continue 在循环中，break语句可以提前退出循环体continue语句可以跳过当前循环，直接开始下一次循环]]></content>
       <categories>
         <category>数据分析</category>
       </categories>
